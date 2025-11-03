@@ -1,0 +1,10 @@
+[package]
+name = "sketchuploader"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+tauri = { version = "2.9.2", features = [] }
+
+[build-dependencies]
+tauri-build = { version = "2.5.1", features = [] }

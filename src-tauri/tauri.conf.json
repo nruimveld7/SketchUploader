@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schema.tauri.app/config/2",
+    "productName": "SketchUploader",
+    "identifier": "com.example.sketchuploader",
+    "version": "0.0.1",
+    "build": {
+        "beforeDevCommand": "npm run dev",
+        "devUrl": "http://localhost:5173",
+        "frontendDist": "../dist"
+    },
+    "app": {
+        "windows": [
+            {
+                "title": "SketchUploader",
+                "width": 900,
+                "height": 600
+            }
+        ]
+    },
+    "bundle": {
+        "active": true
+    }
+}
