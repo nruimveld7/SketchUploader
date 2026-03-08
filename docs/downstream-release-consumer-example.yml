@@ -1,4 +1,4 @@
-name: Consume SketchUploader Release
+name: Consume ALDER Release
 
 on:
   workflow_dispatch:
@@ -6,9 +6,9 @@ on:
     branches: [ main ]
 
 env:
-  SKETCHUPLOADER_REPO: nruimveld7/SketchUploader
-  SKETCHUPLOADER_VERSION: v0.0.1
-  SKETCHUPLOADER_ARCH: X64
+  ALDER_REPO: nruimveld7/ALDER
+  ALDER_VERSION: v1.0.0
+  ALDER_ARCH: X64
 
 jobs:
   fetch-and-run:
@@ -17,7 +17,7 @@ jobs:
       - name: Download release manifest
         shell: pwsh
         run: |
-          $base = "https://github.com/${env:SKETCHUPLOADER_REPO}/releases/download/${env:SKETCHUPLOADER_VERSION}"
+          $base = "https://github.com/${env:ALDER_REPO}/releases/download/${env:ALDER_VERSION}"
           Invoke-WebRequest "$base/release-manifest.json" -OutFile release-manifest.json
 
       - name: Select Windows asset from manifest
@@ -26,7 +26,7 @@ jobs:
         run: |
           $manifest = Get-Content release-manifest.json | ConvertFrom-Json
           $candidate = $manifest.assets `
-            | Where-Object { $_.os -eq "Windows" -and $_.arch -eq $env:SKETCHUPLOADER_ARCH -and $_.name -match "\.(exe|msi)$" } `
+            | Where-Object { $_.os -eq "Windows" -and $_.arch -eq $env:ALDER_ARCH -and $_.name -match "\.(exe|msi)$" } `
             | Select-Object -First 1
           if (-not $candidate) {
             throw "No Windows asset found in release manifest."
@@ -37,7 +37,7 @@ jobs:
       - name: Download selected asset
         shell: pwsh
         run: |
-          $base = "https://github.com/${env:SKETCHUPLOADER_REPO}/releases/download/${env:SKETCHUPLOADER_VERSION}"
+          $base = "https://github.com/${env:ALDER_REPO}/releases/download/${env:ALDER_VERSION}"
           $assetName = "${{ steps.select.outputs.asset_name }}"
           Invoke-WebRequest "$base/$assetName" -OutFile "$assetName"
 

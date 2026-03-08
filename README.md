@@ -20,7 +20,7 @@ This project is designed for iterative firmware and library development where ti
 - Local library folder support for compile-time overrides
 - Optional visibility of installed libraries reported by `arduino-cli`
 - Integrated serial monitor (connect, stream, send input, line ending control)
-- Persistent app settings in `sketchuploader.config.json`
+- Persistent app settings in `alder.config.json`
 - Startup checks for `arduino-cli` availability and required cores
 - Missing `arduino-cli` prompt with one-click install on Windows (via `winget`)
 
@@ -79,8 +79,8 @@ An example consumer workflow is provided at:
 
 ## Configuration
 
-SketchUploader reads and writes `sketchuploader.config.json` at runtime.  
-Use `sketchuploader.config.example.json` as a reference template.
+ALDER reads and writes `alder.config.json` at runtime.  
+Use `alder.config.example.json` as a reference template.
 
 Notable configuration areas:
 
@@ -100,8 +100,8 @@ Notable configuration areas:
 
 ## Repository
 
-- Source: https://github.com/nruimveld7/SketchUploader
-- Issues: https://github.com/nruimveld7/SketchUploader/issues
+- Source: https://github.com/nruimveld7/ALDER
+- Issues: https://github.com/nruimveld7/ALDER/issues
 
 ## License
 

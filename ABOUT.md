@@ -1,6 +1,6 @@
-# SketchUploader App Help
+# ALDER App Help
 
-SketchUploader is a focused Arduino CLI companion for library development workflows.
+ALDER is a focused Arduino CLI companion for library development workflows.
 
 ## What This App Does
 
@@ -16,5 +16,5 @@ SketchUploader is a focused Arduino CLI companion for library development workfl
 
 ## Notes
 
-- App settings are loaded from `sketchuploader.config.json`.
+- App settings are loaded from `alder.config.json`.
 - This About content is bundled at build time and is not loaded from the repo README at runtime.

@@ -14,7 +14,8 @@ use std::thread::{self, JoinHandle};
 use std::time::Duration;
 use tauri::{AppHandle, Emitter, State};
 
-const CONFIG_FILE_NAME: &str = "sketchuploader.config.json";
+const CONFIG_FILE_NAME: &str = "alder.config.json";
+const LEGACY_CONFIG_FILE_NAME: &str = "sketchuploader.config.json";
 
 #[derive(Debug, Serialize)]
 struct CommandResult {
@@ -418,8 +419,19 @@ async fn install_arduino_cli() -> Result<CommandResult, String> {
 }
 fn config_candidate_paths() -> Vec<PathBuf> {
     let mut paths = Vec::new();
+    let mut push_candidates = |base_dir: &Path| {
+        let primary = base_dir.join(CONFIG_FILE_NAME);
+        if !paths.contains(&primary) {
+            paths.push(primary);
+        }
+
+        let legacy = base_dir.join(LEGACY_CONFIG_FILE_NAME);
+        if !paths.contains(&legacy) {
+            paths.push(legacy);
+        }
+    };
+
     if let Ok(cwd) = std::env::current_dir() {
-        let cwd_candidate = cwd.join(CONFIG_FILE_NAME);
         if cwd
             .file_name()
             .and_then(|name| name.to_str())
@@ -427,19 +439,18 @@ fn config_candidate_paths() -> Vec<PathBuf> {
             .unwrap_or(false)
         {
             if let Some(parent) = cwd.parent() {
-                paths.push(parent.join(CONFIG_FILE_NAME));
+                push_candidates(parent);
             }
         }
-        paths.push(cwd_candidate);
+        push_candidates(&cwd);
     }
+
     if let Ok(exe_path) = std::env::current_exe() {
         if let Some(exe_dir) = exe_path.parent() {
-            let exe_candidate = exe_dir.join(CONFIG_FILE_NAME);
-            if !paths.contains(&exe_candidate) {
-                paths.push(exe_candidate);
-            }
+            push_candidates(exe_dir);
         }
     }
+
     paths
 }
 

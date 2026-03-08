@@ -18,6 +18,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "alder"
+version = "1.0.0"
+dependencies = [
+ "rfd",
+ "serde",
+ "serde_json",
+ "serialport",
+ "tauri",
+ "tauri-build",
+]
+
+[[package]]
 name = "alloc-no-stdlib"
 version = "2.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3450,18 +3462,6 @@ name = "siphasher"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56199f7ddabf13fe5074ce809e7d3f42b42ae711800501b5b16ea82ad029c39d"
-
-[[package]]
-name = "sketchuploader"
-version = "0.0.1"
-dependencies = [
- "rfd",
- "serde",
- "serde_json",
- "serialport",
- "tauri",
- "tauri-build",
-]
 
 [[package]]
 name = "slab"

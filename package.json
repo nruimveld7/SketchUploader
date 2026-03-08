@@ -1,6 +1,6 @@
 {
-    "name": "sketchuploader",
-    "version": "0.0.1",
+    "name": "alder",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "scripts": {
@@ -27,13 +27,13 @@
     "description": "",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nruimveld7/SketchUploader.git"
+        "url": "git+https://github.com/nruimveld7/ALDER.git"
     },
     "keywords": [],
     "author": "",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/nruimveld7/SketchUploader/issues"
+        "url": "https://github.com/nruimveld7/ALDER/issues"
     },
-    "homepage": "https://github.com/nruimveld7/SketchUploader#readme"
+    "homepage": "https://github.com/nruimveld7/ALDER#readme"
 }

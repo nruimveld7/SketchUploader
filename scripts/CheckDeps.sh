@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # scripts/CheckDeps.sh
-# CheckDeps.sh — verify (and optionally install) local dev dependencies for SketchUploader.
+# CheckDeps.sh — verify (and optionally install) local dev dependencies for ALDER.
 #
 # Usage:
 #   ./scripts/CheckDeps.sh            # check only (default)
@@ -15,7 +15,7 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-CheckDeps.sh — verify (and optionally install) local dev dependencies for SketchUploader.
+CheckDeps.sh — verify (and optionally install) local dev dependencies for ALDER.
 
 Usage:
   ./scripts/CheckDeps.sh            # check only (default)

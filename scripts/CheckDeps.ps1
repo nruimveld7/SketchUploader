@@ -1,6 +1,6 @@
 # scripts/CheckDeps.ps1
 <#
-  CheckDeps.ps1 — verify (and optionally install) local dev dependencies for SketchUploader.
+  CheckDeps.ps1 — verify (and optionally install) local dev dependencies for ALDER.
 
   Usage:
     .\scripts\CheckDeps.ps1           # check only (default)
@@ -19,7 +19,7 @@ param(
 )
 
 if ($Help) {
-  Write-Host "CheckDeps.ps1 — verify (and optionally install) local dev dependencies for SketchUploader.`n" -ForegroundColor Cyan
+  Write-Host "CheckDeps.ps1 — verify (and optionally install) local dev dependencies for ALDER.`n" -ForegroundColor Cyan
   Write-Host "Usage:`n  .\scripts\CheckDeps.ps1           # check only (default)`n  .\scripts\CheckDeps.ps1 --install # install missing deps (winget required)`n"
   exit 0
 }

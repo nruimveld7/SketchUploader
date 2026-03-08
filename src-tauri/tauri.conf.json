@@ -1,8 +1,8 @@
 {
     "$schema": "https://schema.tauri.app/config/2",
-    "productName": "SketchUploader",
-    "identifier": "com.example.sketchuploader",
-    "version": "0.0.1",
+    "productName": "ALDER",
+    "identifier": "com.nruimveld7.alder",
+    "version": "1.0.0",
     "build": {
         "beforeDevCommand": "npm run dev",
         "devUrl": "http://localhost:5173",
@@ -11,7 +11,7 @@
     "app": {
         "windows": [
             {
-                "title": "SketchUploader",
+                "title": "ALDER",
                 "width": 900,
                 "height": 600
             }
